@@ -1,0 +1,15 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="ToolbarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@null</item>
+        <item name="colorPrimaryDark">@null</item>
+        <item name="colorAccent">@null</item>
+        <item name="android:textColorPrimary">@null</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="actionMenuTextColor">@null</item>
+        <item name="android:textColor">@null</item>
+    </style>
+
+</resources>
