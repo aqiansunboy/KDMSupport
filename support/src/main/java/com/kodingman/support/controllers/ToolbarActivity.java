@@ -45,7 +45,7 @@ public abstract class ToolbarActivity extends BaseActivity
     @Override
     public void setContentView(int layoutId)
     {
-        setContentView(View.inflate(this, R.layout.layout_support_toolbar, null));
+        setContentView(View.inflate(this, getSupportToolbarLayoutId(), null));
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         if (rootLayout == null)
         {
@@ -59,6 +59,11 @@ public abstract class ToolbarActivity extends BaseActivity
     protected int getMenuId()
     {
         return -1;
+    }
+
+    protected int getSupportToolbarLayoutId()
+    {
+        return R.layout.layout_support_toolbar;
     }
 
     protected final void setNavigationToolbar()

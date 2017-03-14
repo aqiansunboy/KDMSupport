@@ -47,7 +47,7 @@ public abstract class BaseFragment extends Fragment
         {
             if (isSupportToolbar())
             {
-                mRootView = inflater.inflate(R.layout.layout_support_toolbar, container, false);
+                mRootView = inflater.inflate(getSupportToolbarLayoutId(), container, false);
                 initToolbar();
             }
             else
@@ -104,6 +104,10 @@ public abstract class BaseFragment extends Fragment
     protected int getMenuId()
     {
         return -1;
+    }
+    protected int getSupportToolbarLayoutId()
+    {
+        return R.layout.layout_support_toolbar;
     }
 
     protected abstract int getLayoutId();

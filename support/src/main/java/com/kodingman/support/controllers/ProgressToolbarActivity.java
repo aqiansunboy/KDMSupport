@@ -55,7 +55,7 @@ public abstract class ProgressToolbarActivity extends BaseActivity
     @Override
     public void setContentView(View view)
     {
-        super.setContentView(R.layout.layout_support_progress_toolbar);
+        super.setContentView(getSupportToolbarLayoutId());
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         if (rootLayout == null)
         {
@@ -72,6 +72,11 @@ public abstract class ProgressToolbarActivity extends BaseActivity
     protected int getMenuId()
     {
         return -1;
+    }
+
+    protected int getSupportToolbarLayoutId()
+    {
+        return R.layout.layout_support_progress_toolbar;
     }
 
     protected final void setNavigationToolbar()
