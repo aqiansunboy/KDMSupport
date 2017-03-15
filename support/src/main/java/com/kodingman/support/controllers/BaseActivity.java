@@ -1,9 +1,11 @@
 package com.kodingman.support.controllers;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.view.WindowManager;
 
 import com.kodingman.support.R;
 
@@ -33,6 +35,13 @@ public abstract class BaseActivity extends AppCompatActivity
         // 初始化视图
         setContentView(getLayoutId());
         initView(savedInstanceState);
+
+        // 经测试在代码里直接声明透明状态栏更有效
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        {
+            WindowManager.LayoutParams localLayoutParams = getWindow().getAttributes();
+            localLayoutParams.flags = (WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS | localLayoutParams.flags);
+        }
     }
 
     protected abstract int getLayoutId();

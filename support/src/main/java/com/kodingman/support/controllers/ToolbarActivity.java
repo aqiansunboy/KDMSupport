@@ -45,12 +45,14 @@ public abstract class ToolbarActivity extends BaseActivity
     @Override
     public void setContentView(int layoutId)
     {
-        setContentView(View.inflate(this, getSupportToolbarLayoutId(), null));
+        setContentView(View.inflate(this, R.layout.kdm_layout_root, null));
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         if (rootLayout == null)
         {
             return;
         }
+        rootLayout.addView(View.inflate(this, getToolbarLayoutId(), null),
+                           new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         rootLayout.addView(View.inflate(this, layoutId, null),
                             new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
         initToolbar();
@@ -61,9 +63,9 @@ public abstract class ToolbarActivity extends BaseActivity
         return -1;
     }
 
-    protected int getSupportToolbarLayoutId()
+    protected int getToolbarLayoutId()
     {
-        return R.layout.layout_support_toolbar;
+        return R.layout.kdm_layout_toolbar;
     }
 
     protected final void setNavigationToolbar()
@@ -90,6 +92,6 @@ public abstract class ToolbarActivity extends BaseActivity
      */
     protected int getNavigationIcon()
     {
-        return R.mipmap.ic_arrow_back_black;
+        return R.mipmap.kdm_png_back_black;
     }
 }

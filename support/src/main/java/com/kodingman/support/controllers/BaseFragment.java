@@ -47,12 +47,14 @@ public abstract class BaseFragment extends Fragment
         {
             if (isSupportToolbar())
             {
-                mRootView = inflater.inflate(getSupportToolbarLayoutId(), container, false);
+                mRootView = inflater.inflate(R.layout.kdm_layout_root, container, false);
+                ((ViewGroup) mRootView).addView(View.inflate(getContext(), getToolbarLayoutId(), null),
+                                   new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
                 initToolbar();
             }
             else
             {
-                mRootView = inflater.inflate(R.layout.layout_disable_toolbar, container, false);
+                mRootView = inflater.inflate(R.layout.kdm_layout_root, container, false);
             }
             View contentView = View.inflate(getContext(), getLayoutId(), null);
             ((ViewGroup) mRootView).addView(contentView, new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
@@ -105,9 +107,9 @@ public abstract class BaseFragment extends Fragment
     {
         return -1;
     }
-    protected int getSupportToolbarLayoutId()
+    protected int getToolbarLayoutId()
     {
-        return R.layout.layout_support_toolbar;
+        return R.layout.kdm_layout_toolbar;
     }
 
     protected abstract int getLayoutId();
@@ -150,7 +152,7 @@ public abstract class BaseFragment extends Fragment
      */
     protected int getNavigationIcon()
     {
-        return R.mipmap.ic_arrow_back_black;
+        return R.mipmap.kdm_png_back_black;
     }
 
     public BaseActivity getContext()

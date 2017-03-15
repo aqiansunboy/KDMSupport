@@ -18,7 +18,7 @@ import com.kodingman.support.demo.R;
  *
  * Copyright (c) 2017年, Roopto Network CO.ltd. All Rights Reserved.
  */
-public class TestToolbarActivity extends ToolbarActivity
+public class TestToolbarActivity extends DemoToolbarActivity
 {
     @Override
     protected int getLayoutId()
@@ -31,5 +31,13 @@ public class TestToolbarActivity extends ToolbarActivity
     {
         TextView textView = (TextView) findViewById(R.id.testToolbarActivityView);
         textView.setText("测试ToolbarActivity");
+    }
+
+    @Override
+    protected void initToolbar()
+    {
+        super.initToolbar();
+        setNavigationToolbar();
+        getToolbar().setTitle("这是一个测试");
     }
 }

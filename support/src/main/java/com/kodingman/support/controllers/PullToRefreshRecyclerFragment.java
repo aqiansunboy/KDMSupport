@@ -7,7 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.roopto.tootheye.R;
+import com.kodingman.support.R;
+
 
 /**
  * Project Name: ToothEye4Android
@@ -67,10 +68,10 @@ public abstract class PullToRefreshRecyclerFragment extends NetworkFragment
         }
         LinearLayoutManager layoutManager = (LinearLayoutManager) recyclerView.getLayoutManager();
         int count = layoutManager.getChildCount();
-        if (layoutManager.findLastVisibleItemPosition() > count - 9 && getApi().hasMore())
+        /*if (layoutManager.findLastVisibleItemPosition() > count - 9 && getApi().hasMore())
         {
             onLoadData();
-        }
+        }*/
     }
 
     @Override
